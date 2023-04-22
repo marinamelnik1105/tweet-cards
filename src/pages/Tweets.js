@@ -10,8 +10,6 @@ const Tweets = () => {
     const getTweets = async () => {
       try {
         const results = await api.getTweets();
-
-        console.log({ results });
         setResults(results);
         setNotEmpty(true);
       } catch (error) {
