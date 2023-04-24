@@ -17,10 +17,10 @@ export const getTweets = async (page = 1) => {
     console.log(e.message);
   }
 };
-export async function putFollow({ id, value }) {
+export async function putFollow(id, value) {
   try {
-    const users = await axios.put(`users/${id}`, { followers: value });
-    return users;
+    const user = await axios.put(`users/${id}`, { followers: value });
+    return user;
   } catch (error) {
     console.error(error);
   }
