@@ -8,15 +8,6 @@ export const TweetsItem = ({ user }) => {
   const [updateFollowers, setUpdateFollowers] = useState(followers);
 
   const onClickFollow = async () => {
-    if (!following) {
-      let increment = (followers += 1);
-      setUpdateFollowers(increment);
-      setFollowing(true);
-    } else {
-      let prevState = followers;
-      setUpdateFollowers(prevState);
-      setFollowing(false);
-    }
     const putFollow = async followers => {
       try {
         await api.putFollow(id, followers);
@@ -24,7 +15,16 @@ export const TweetsItem = ({ user }) => {
         console.log(error);
       }
     };
-    putFollow(followers);
+    if (!following) {
+      //   let increment = (followers += 1);
+      setUpdateFollowers(prevState => prevState + 1);
+      setFollowing(true);
+    } else {
+      //   let increment = (followers -= 1);
+      setUpdateFollowers(prevState => prevState - 1);
+      setFollowing(false);
+    }
+    await putFollow(followers);
   };
 
   useEffect(() => {
