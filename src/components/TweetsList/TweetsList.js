@@ -1,10 +1,10 @@
 import logo from '../../images/logo.png';
-export const TweetsList = ({ results }) => {
+export const TweetsList = ({ users }) => {
   return (
     <>
       {
         <ul>
-          {results.data.map(({ id, avatar, tweets, followers }) => (
+          {users.map(({ id, avatar, tweets, followers }) => (
             <li key={id}>
               <div>
                 <img src={logo} alt="logo" />
@@ -12,14 +12,16 @@ export const TweetsList = ({ results }) => {
                 <img src={avatar} width="100px" alt="user-avatar" />
                 <ul>
                   <li>
-                    <p>{tweets}</p>
+                    <p>{tweets} tweets</p>
                   </li>
                   <li>
-                    <p>{followers}</p>
+                    <p>{followers} followers</p>
                   </li>
                 </ul>
               </div>
-              <button type="button">follow</button>
+              <button type="button" onClick={e => console.log(e)}>
+                Follow
+              </button>
             </li>
           ))}
         </ul>
