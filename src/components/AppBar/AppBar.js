@@ -1,18 +1,18 @@
-import { NavLink } from 'react-router-dom';
+import { Header, NavList, StyledLink } from './AppBar.styled';
 
 export const AppBar = () => {
   return (
-    <header>
+    <Header>
       <nav>
-        <ul>
+        <NavList>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <StyledLink to="/">Home</StyledLink>
           </li>
           <li>
-            <NavLink to="/tweets">Tweets</NavLink>
+            <StyledLink to="/tweets">Tweets</StyledLink>
           </li>
-        </ul>
+        </NavList>
       </nav>
-    </header>
+    </Header>
   );
 };

@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react';
-import * as api from '../components/services/api';
+import { HiArrowLeft } from 'react-icons/hi';
+import * as api from '../../components/services/api';
 import { TweetsList } from 'components/TweetsList/TweetsList';
+import { Button, Div, P, StyledLink } from './Tweets.styled';
 
 const Tweets = () => {
   const [notEmpty, setNotEmpty] = useState(false);
   const [users, setUsers] = useState([]);
   const [page, setPage] = useState(2);
   const [pages, setPages] = useState(1);
+  const [btnShow, setBtnShow] = useState(false);
 
   useEffect(() => {
     const getAllTweets = async () => {
@@ -35,6 +38,7 @@ const Tweets = () => {
       try {
         const { data } = await api.getTweets();
         setUsers(data);
+        setBtnShow(true);
         setNotEmpty(true);
       } catch (error) {
         console.log(error);
@@ -44,10 +48,19 @@ const Tweets = () => {
   }, []);
 
   return (
-    <div>
+    <section>
+      <StyledLink to="/">
+        <HiArrowLeft />
+        <P>Back</P>
+      </StyledLink>
       {notEmpty && <TweetsList users={users} />}
-      {pages >= page && <button onClick={onClickLoadMore}>Load More</button>}
-    </div>
+      <Div>
+        {' '}
+        {pages >= page && btnShow && (
+          <Button onClick={onClickLoadMore}>Load More</Button>
+        )}
+      </Div>
+    </section>
   );
 };
 
