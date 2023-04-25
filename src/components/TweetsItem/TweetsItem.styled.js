@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import bcgImage from '../../images/bcg-image.png';
+
 export const Item = styled.li`
   width: 380px;
   height: 460px;
@@ -13,6 +14,7 @@ export const Item = styled.li`
   box-shadow: -2.5777px 6.87386px 20.6216px rgba(0, 0, 0, 0.23);
   border-radius: 20px;
 `;
+
 export const Div = styled.div`
   height: 460px;
   position: relative;

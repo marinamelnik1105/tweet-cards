@@ -6,6 +6,7 @@ const LoaderContainer = styled.div`
   justify-content: center;
   margin-top: 10px;
 `;
+
 export const Spinner = () => {
   return (
     <LoaderContainer>

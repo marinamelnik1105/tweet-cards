@@ -14,13 +14,14 @@ line-height: 1.2;}
 ul{
 list-style: none;
 padding-left: 0;
+margin: 0;
 }
-
 
 p{
 margin: 0;}
 
 h1{
 margin: 0}
+
 a{text-decoration:none;color:inherit;
 }`;

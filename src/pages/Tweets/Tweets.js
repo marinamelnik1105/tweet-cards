@@ -55,9 +55,8 @@ const Tweets = () => {
       </StyledLink>
       {notEmpty && <TweetsList users={users} />}
       <Div>
-        {' '}
         {pages >= page && btnShow && (
-          <Button onClick={onClickLoadMore}>Load More</Button>
+          <Button onClick={onClickLoadMore}>load more</Button>
         )}
       </Div>
     </section>

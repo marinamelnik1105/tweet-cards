@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const StyledLink = styled(NavLink)`
   margin: 20px;
-  color: #373737;
+  color: #52319f;
   display: flex;
   align-items: center;
   border-radius: 10px;
@@ -23,10 +23,12 @@ export const P = styled.p`
   text-transform: uppercase;
   margin-left: 10px;
 `;
+
 export const Div = styled.div`
   display: flex;
   justify-content: center;
 `;
+
 export const Button = styled.button`
   margin: 10px;
   color: #373737;

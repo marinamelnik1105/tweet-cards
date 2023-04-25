@@ -12,9 +12,9 @@ import {
   UserInfoDiv,
   UserInfoList,
 } from './TweetsItem.styled';
+
 export const TweetsItem = ({ user }) => {
   let { avatar, tweets, followers, id } = user;
-
   const [following, setFollowing] = useState(false);
   const [updateFollowers, setUpdateFollowers] = useState(followers);
 
@@ -51,12 +51,12 @@ export const TweetsItem = ({ user }) => {
   }, [id, following, updateFollowers]);
 
   const formatFollowers = updateFollowers.toLocaleString('en-US');
+
   return (
     <Item>
       <Div>
         <Logo src={logo} alt="logo" />
         <UserInfoDiv>
-          {' '}
           <ImageDiv>
             <ImageAvatar src={avatar} width="100px" alt="user-avatar" />
           </ImageDiv>

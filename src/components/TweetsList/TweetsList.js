@@ -1,5 +1,6 @@
 import { TweetsItem } from 'components/TweetsItem/TweetsItem';
 import { List } from './TweetsList.styled';
+
 export const TweetsList = ({ users }) => {
   return (
     <>

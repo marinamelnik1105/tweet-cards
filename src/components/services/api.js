@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 axios.defaults.baseURL = 'https://644294cc33997d3ef9143f2a.mockapi.io/api/';
 
 export async function getAllTweets() {
@@ -9,6 +10,7 @@ export async function getAllTweets() {
     console.error(error);
   }
 }
+
 export const getTweets = async (page = 1) => {
   try {
     const users = await axios.get(`/users?page=${page}&limit=3`);
@@ -17,6 +19,7 @@ export const getTweets = async (page = 1) => {
     console.log(e.message);
   }
 };
+
 export async function putFollow(id, value) {
   try {
     const user = await axios.put(`users/${id}`, { followers: value });
